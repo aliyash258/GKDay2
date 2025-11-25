@@ -4,8 +4,8 @@ public class GKDay2
 {
 	public static void main(String[] args)
 	{
+		long startTime = System.nanoTime();
 		try {
-
 			ExecutorService executor = Executors.newFixedThreadPool(1000);
 			int[] nums = new int[1000];
 			for(int i = 0; i < 1000; i++)
@@ -35,5 +35,9 @@ public class GKDay2
 		{
 			System.err.println(e);
 		}
+
+		long endTime = System.nanoTime();
+		long duration = endTime - startTime;
+		System.out.println("Duration "+duration/1000000000.0+ "seconds");
 	}
 }
